@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
+        window = UIWindow(windowScene: windowScene)
+        
         window?.windowScene = windowScene
         
         window?.rootViewController =  MainTabVarViewController()

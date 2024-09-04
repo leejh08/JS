@@ -20,8 +20,8 @@ class MainTabVarViewController: UITabBarController {
         
         view.backgroundColor = .systemBackground
         
-        let vc1 = UINavigationController(rootViewController: MainViewController())
-        let vc2 = UINavigationController(rootViewController: TabBarMyPageViewController())
+        let vc1 = UINavigationController(rootViewController: HomeViewController())
+        let vc2 = UINavigationController(rootViewController: MyPageViewController())
         
         
         
