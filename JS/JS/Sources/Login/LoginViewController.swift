@@ -1,24 +1,17 @@
-import Foundation
 import UIKit
 import SnapKit
 import Then
 import RxSwift
 import RxCocoa
 
-
-
 class LoginViewController: UIViewController {
-    
-    
     
     private let disposeBag = DisposeBag()
     private let viewModel = LoginViewModel()
     
-    
     private let logoImageVIew = UIImageView().then {
         $0.image = .logo
     }
-    
     
     private let welcomeLabel = UILabel().then {
         $0.text = "어서와 자습은 오랜만이지?"
@@ -62,34 +55,43 @@ class LoginViewController: UIViewController {
         $0.backgroundColor = .lightGray
         $0.setTitleColor(.black, for: .normal)
         $0.layer.cornerRadius = 10
-        
-        
     }
-    
-
-
-    
-    
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        navigationItem.hidesBackButton = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         addView()
         layout()
         
-        loginButton.rx.tap.subscribe(onNext: {
-                    self.viewModel.loginButtonDidTap()
-                })
-                .disposed(by: disposeBag)
-        
-        self.goSignUpButton.rx.tap.subscribe(onNext: {
-                   self.viewModel.signinButtonDidTap()
-               })
-               .disposed(by: disposeBag)
+        setupBindings()
     }
     
+    private func setupBindings() {
+        loginButton.rx.tap
+            .bind { [weak self] in
+                self?.viewModel.loginButtonDidTap()
+            }
+            .disposed(by: disposeBag)
+        
+        goSignUpButton.rx.tap
+            .bind { [weak self] in
+                self?.viewModel.signUpButtonDidTap()
+            }
+            .disposed(by: disposeBag)
+        
+        
+        viewModel.onLogin = { [weak self] in
+            let homeViewController = MainTabVarViewController()
+            self?.navigationController?.pushViewController(homeViewController, animated: true)
+        }
+        
+        viewModel.onSignUp = { [weak self] in
+            let signUpViewController = SignUpViewController()
+            self?.navigationController?.pushViewController(signUpViewController, animated: true)
+        }
+    }
     
     func addView() {
         [
@@ -99,13 +101,8 @@ class LoginViewController: UIViewController {
             passWordTextField,
             loginButton,
             goSignUpButton
-            
-            
-        ].forEach{view.addSubview($0)}
+        ].forEach { view.addSubview($0) }
     }
-    
-    
-    
     
     func layout() {
         logoImageVIew.snp.makeConstraints {
@@ -117,9 +114,8 @@ class LoginViewController: UIViewController {
         
         welcomeLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(69)
+            $0.top.equalTo(125)
         }
-        
         
         loginTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -129,26 +125,23 @@ class LoginViewController: UIViewController {
         }
         
         passWordTextField.snp.makeConstraints {
-            
             $0.centerX.equalToSuperview()
             $0.top.equalTo(loginTextField.snp.bottom).offset(25)
             $0.width.equalToSuperview().inset(25)
             $0.height.equalTo(56)
-            
         }
         
         goSignUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(passWordTextField.snp.bottom).offset(230)
+            $0.top.equalTo(passWordTextField.snp.bottom).offset(220)
         }
 
         loginButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(passWordTextField.snp.bottom).offset(290)
+            $0.top.equalTo(passWordTextField.snp.bottom).offset(270)
             $0.width.equalToSuperview().inset(24)
             $0.height.equalTo(56)
         }
     }
 }
-
 

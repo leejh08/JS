@@ -1,15 +1,15 @@
 import Foundation
 import UIKit
 
-class LoginViewModel {
+class SignUpViewModel {
     var onLogin: (() -> Void)?
     var onSignUp: (() -> Void)?
     
-    func loginButtonDidTap() {
+    func loginButtonTap() {
         onLogin?()
     }
     
-    func signUpButtonDidTap() {
+    func signUpButtonTap() {
         onSignUp?()
     }
 }

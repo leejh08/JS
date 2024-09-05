@@ -10,14 +10,11 @@
 		6F1221EB2C88634F00F84DCA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221EA2C88634F00F84DCA /* LoginViewController.swift */; };
 		6F1221ED2C886BF300F84DCA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221EC2C886BF300F84DCA /* LoginViewModel.swift */; };
 		6F1221EF2C8876B200F84DCA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221EE2C8876B200F84DCA /* SignUpViewController.swift */; };
-		6F1221F12C8876BC00F84DCA /* SignUPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221F02C8876BC00F84DCA /* SignUPViewModel.swift */; };
-		6F5AD4F42C89EB29000DB39E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 6F5AD4F32C89EB29000DB39E /* RxBlocking */; };
-		6F5AD4F62C89EB29000DB39E /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 6F5AD4F52C89EB29000DB39E /* RxBlocking-Dynamic */; };
-		6F5AD4F82C89EB29000DB39E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6F5AD4F72C89EB29000DB39E /* RxCocoa */; };
-		6F5AD4FA2C89EB29000DB39E /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 6F5AD4F92C89EB29000DB39E /* RxCocoa-Dynamic */; };
-		6F5AD4FC2C89EB29000DB39E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 6F5AD4FB2C89EB29000DB39E /* RxRelay */; };
+		6F1221F12C8876BC00F84DCA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221F02C8876BC00F84DCA /* SignUpViewModel.swift */; };
 		6F61D2012C89B70F005C2265 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */; };
 		6F61D2042C89BB11005C2265 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 6F61D2032C89BB11005C2265 /* FSCalendar */; };
+		6F6272232C8A18560060979A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6272222C8A18560060979A /* RxCocoa */; };
+		6F6272252C8A18560060979A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6272242C8A18560060979A /* RxSwift */; };
 		6FF66F252C88318400B79C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF66F242C88318400B79C59 /* AppDelegate.swift */; };
 		6FF66F272C88318400B79C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF66F262C88318400B79C59 /* SceneDelegate.swift */; };
 		6FF66F292C88318400B79C59 /* MainTabVarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF66F282C88318400B79C59 /* MainTabVarViewController.swift */; };
@@ -33,7 +30,7 @@
 		6F1221EA2C88634F00F84DCA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6F1221EC2C886BF300F84DCA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6F1221EE2C8876B200F84DCA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		6F1221F02C8876BC00F84DCA /* SignUPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewModel.swift; sourceTree = "<group>"; };
+		6F1221F02C8876BC00F84DCA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		6FF66F212C88318400B79C59 /* JS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF66F242C88318400B79C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,14 +48,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F5AD4F82C89EB29000DB39E /* RxCocoa in Frameworks */,
-				6F5AD4FA2C89EB29000DB39E /* RxCocoa-Dynamic in Frameworks */,
 				6FF66F462C8849FB00B79C59 /* Then in Frameworks */,
-				6F5AD4F42C89EB29000DB39E /* RxBlocking in Frameworks */,
 				6F61D2042C89BB11005C2265 /* FSCalendar in Frameworks */,
+				6F6272252C8A18560060979A /* RxSwift in Frameworks */,
+				6F6272232C8A18560060979A /* RxCocoa in Frameworks */,
 				6FF66F492C884A0800B79C59 /* SnapKit in Frameworks */,
-				6F5AD4FC2C89EB29000DB39E /* RxRelay in Frameworks */,
-				6F5AD4F62C89EB29000DB39E /* RxBlocking-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				6F1221EE2C8876B200F84DCA /* SignUpViewController.swift */,
-				6F1221F02C8876BC00F84DCA /* SignUPViewModel.swift */,
+				6F1221F02C8876BC00F84DCA /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -177,11 +171,8 @@
 				6FF66F452C8849FB00B79C59 /* Then */,
 				6FF66F482C884A0800B79C59 /* SnapKit */,
 				6F61D2032C89BB11005C2265 /* FSCalendar */,
-				6F5AD4F32C89EB29000DB39E /* RxBlocking */,
-				6F5AD4F52C89EB29000DB39E /* RxBlocking-Dynamic */,
-				6F5AD4F72C89EB29000DB39E /* RxCocoa */,
-				6F5AD4F92C89EB29000DB39E /* RxCocoa-Dynamic */,
-				6F5AD4FB2C89EB29000DB39E /* RxRelay */,
+				6F6272222C8A18560060979A /* RxCocoa */,
+				6F6272242C8A18560060979A /* RxSwift */,
 			);
 			productName = JS;
 			productReference = 6FF66F212C88318400B79C59 /* JS.app */;
@@ -215,7 +206,7 @@
 				6FF66F442C8849FB00B79C59 /* XCRemoteSwiftPackageReference "Then" */,
 				6FF66F472C884A0800B79C59 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6F61D2022C89BB11005C2265 /* XCRemoteSwiftPackageReference "FSCalendar" */,
-				6F5AD4F22C89EB29000DB39E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				6F6272212C8A18550060979A /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 6FF66F222C88318400B79C59 /* Products */;
 			projectDirPath = "";
@@ -246,7 +237,7 @@
 				6F1221EB2C88634F00F84DCA /* LoginViewController.swift in Sources */,
 				6FF66F402C8848DD00B79C59 /* MyPageViewController.swift in Sources */,
 				6F1221EF2C8876B200F84DCA /* SignUpViewController.swift in Sources */,
-				6F1221F12C8876BC00F84DCA /* SignUPViewModel.swift in Sources */,
+				6F1221F12C8876BC00F84DCA /* SignUpViewModel.swift in Sources */,
 				6FF66F292C88318400B79C59 /* MainTabVarViewController.swift in Sources */,
 				6FF66F252C88318400B79C59 /* AppDelegate.swift in Sources */,
 				6FF66F272C88318400B79C59 /* SceneDelegate.swift in Sources */,
@@ -465,20 +456,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6F5AD4F22C89EB29000DB39E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.7.1;
-			};
-		};
 		6F61D2022C89BB11005C2265 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.8.4;
+			};
+		};
+		6F6272212C8A18550060979A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
 			};
 		};
 		6FF66F442C8849FB00B79C59 /* XCRemoteSwiftPackageReference "Then" */ = {
@@ -500,35 +491,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6F5AD4F32C89EB29000DB39E /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F5AD4F22C89EB29000DB39E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		6F5AD4F52C89EB29000DB39E /* RxBlocking-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F5AD4F22C89EB29000DB39E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxBlocking-Dynamic";
-		};
-		6F5AD4F72C89EB29000DB39E /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F5AD4F22C89EB29000DB39E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		6F5AD4F92C89EB29000DB39E /* RxCocoa-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F5AD4F22C89EB29000DB39E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxCocoa-Dynamic";
-		};
-		6F5AD4FB2C89EB29000DB39E /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6F5AD4F22C89EB29000DB39E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
 		6F61D2032C89BB11005C2265 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6F61D2022C89BB11005C2265 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		6F6272222C8A18560060979A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F6272212C8A18550060979A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		6F6272242C8A18560060979A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F6272212C8A18550060979A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		6FF66F452C8849FB00B79C59 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

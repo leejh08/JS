@@ -86,14 +86,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         $0.register(RankTableViewCell.self, forCellReuseIdentifier: RankTableViewCell.identifier)
     }
     
+    
+    private let rankLabel = UILabel().then {
+        $0.text = "⭐️순위⭐️"
+        $0.font = .boldSystemFont(ofSize: 20)
+        $0.textAlignment = .center
+        $0.textColor = .black
+    }
+    
     private var selectedDate: Date?
     private var daysPassed: Int = 0
     let names = ["김주영", "김주영", "김주영", "김주영", "김주영"]
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        title = "홈"
+        title = "공부 좀 해라"
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        navigationItem.hidesBackButton = true
+
         [
             suggestionButton,
             daysLabel,
@@ -101,7 +116,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             calendar,
             titleLabel,
             previousButton,
-            nextButton
+            nextButton,
+            rankLabel
             
             ].forEach { view.addSubview($0) }
         
@@ -141,7 +157,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         calendar.snp.makeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.equalTo(daysLabel.snp.bottom).offset(20)
+            $0.top.equalTo(daysLabel.snp.bottom).offset(1)
             $0.height.equalTo(300)
         }
         
@@ -162,6 +178,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         nextButton.snp.makeConstraints {
             $0.right.equalToSuperview().offset(-20)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
+        }
+        
+        
+        rankLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(600)
         }
     }
     

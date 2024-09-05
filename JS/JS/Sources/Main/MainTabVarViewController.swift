@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  JS
-//
-//  Created by 이지훈 on 9/4/24.
-//
-
 import UIKit
 import Foundation
 import SnapKit
@@ -16,7 +9,8 @@ class MainTabVarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         view.backgroundColor = .systemBackground
         
