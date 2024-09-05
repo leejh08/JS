@@ -18,7 +18,7 @@ class RankTableViewCell: UITableViewCell {
 
     private let daysPassedLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 16)
-        $0.textColor = .gray
+        $0.textColor = .black
         $0.textAlignment = .right
     }
     

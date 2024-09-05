@@ -2,11 +2,16 @@ import Foundation
 import UIKit
 import SnapKit
 import Then
+import RxSwift
+import RxCocoa
 
 
 
 class LoginViewController: UIViewController {
     
+    
+    
+    private let disposeBag = DisposeBag()
     private let viewModel = LoginViewModel()
     
     
@@ -50,7 +55,6 @@ class LoginViewController: UIViewController {
     private let goSignUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.lightGray, for: .normal)
-        $0.addTarget(SignUpViewController.self, action: #selector(loginButtontap), for: .touchUpInside)
     }
     
     private let loginButton = UIButton().then {
@@ -58,26 +62,32 @@ class LoginViewController: UIViewController {
         $0.backgroundColor = .lightGray
         $0.setTitleColor(.black, for: .normal)
         $0.layer.cornerRadius = 10
-        $0.addTarget(HomeViewController.self, action: #selector(SignUpButtontap), for: .touchUpInside)
+        
+        
     }
     
-    
-    @objc func loginButtontap() {
-        self.navigationController?.pushViewController(HomeViewController(), animated: true)
-        print("로그인 버튼 tap")
-    }
+
+
     
     
     
-    @objc func SignUpButtontap() {
-        self.navigationController?.pushViewController(SignUpViewController(), animated: true)
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         addView()
         layout()
+        
+        loginButton.rx.tap.subscribe(onNext: {
+                    self.viewModel.loginButtonDidTap()
+                })
+                .disposed(by: disposeBag)
+        
+        self.goSignUpButton.rx.tap.subscribe(onNext: {
+                   self.viewModel.signinButtonDidTap()
+               })
+               .disposed(by: disposeBag)
     }
     
     
@@ -89,6 +99,7 @@ class LoginViewController: UIViewController {
             passWordTextField,
             loginButton,
             goSignUpButton
+            
             
         ].forEach{view.addSubview($0)}
     }

@@ -7,8 +7,6 @@ import FSCalendar
 
 
 
-
-
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let calendar: FSCalendar = {
@@ -69,6 +67,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         $0.tintColor = .white
         $0.backgroundColor = .blue
         $0.layer.cornerRadius = 10
+        
     }
     
     private let daysLabel = UILabel().then {
@@ -93,6 +92,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         title = "홈"
         [
             suggestionButton,
@@ -106,7 +106,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             ].forEach { view.addSubview($0) }
         
         layout()
-        view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         
         suggestionButton.addTarget(self, action: #selector(showDatePicker), for: .touchUpInside)
@@ -214,6 +213,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RankTableViewCell.identifier, for: indexPath) as? RankTableViewCell else {
             return UITableViewCell()
         }
+        cell.backgroundColor = .white
         
         let rank = indexPath.row + 1
         let name = names[indexPath.row]

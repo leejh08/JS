@@ -9,7 +9,7 @@ class MyPageViewController: UIViewController {
     
 
     private let rankLabel = UILabel().then {
-        $0.text = "🔥대마고 폐급 순위🔥"
+        $0.text = "🔥TIL🔥"
         $0.textColor = .white
         $0.font = .boldSystemFont(ofSize: 21)
         $0.backgroundColor = .black
@@ -17,13 +17,6 @@ class MyPageViewController: UIViewController {
     }
     
     
-    
-    private let rankTableView = UITableView().then {
-        $0.register(RankTableViewCell.self, forCellReuseIdentifier: RankTableViewCell.identifier)
-        $0.separatorStyle = .singleLine
-    }
-    
-
     
     override func viewDidLoad() {
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -37,7 +30,10 @@ class MyPageViewController: UIViewController {
     
     
     func addView() {
-        [rankLabel, rankTableView].forEach { view.addSubview($0) }
+        [
+            rankLabel
+            
+        ].forEach { view.addSubview($0) }
     }
     
     
@@ -49,10 +45,7 @@ class MyPageViewController: UIViewController {
             $0.height.equalTo(50)
         }
         
-        rankTableView.snp.makeConstraints {
-            $0.top.equalTo(rankLabel.snp.bottom).offset(20)
-            $0.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
+      
     }
     
 }

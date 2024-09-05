@@ -1,5 +1,5 @@
 {
-  "originHash" : "2e05d176d02cfdb4a562a937da3a122a1a0430aed9bc63f75836933d484af8ea",
+  "originHash" : "58211700514541608a64e0e0a4b993ada0eb6c214ee52fd65572226815180218",
   "pins" : [
     {
       "identity" : "fscalendar",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "0fbdec5172fccb90f707472eeaea4ffe095278f6",
         "version" : "2.8.4"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "b06a8c8596e4c3e8e7788e08e720e3248563ce6a",
+        "version" : "6.7.1"
       }
     },
     {

@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.windowScene = windowScene
         
-        window?.rootViewController =  LoginViewController()
+        window?.rootViewController =  MainTabVarViewController()
         
         window?.makeKeyAndVisible()
     }
