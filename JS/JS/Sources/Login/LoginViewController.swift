@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
     private let goSignUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.lightGray, for: .normal)
+        $0.addTarget(SignUpViewController.self, action: #selector(loginButtontap), for: .touchUpInside)
     }
     
     private let loginButton = UIButton().then {
@@ -57,13 +58,19 @@ class LoginViewController: UIViewController {
         $0.backgroundColor = .lightGray
         $0.setTitleColor(.black, for: .normal)
         $0.layer.cornerRadius = 10
-        $0.addTarget(self, action: #selector(loginButtontap), for: .touchUpInside)
+        $0.addTarget(HomeViewController.self, action: #selector(SignUpButtontap), for: .touchUpInside)
     }
     
     
-    @objc func loginButtontap(){
+    @objc func loginButtontap() {
         self.navigationController?.pushViewController(HomeViewController(), animated: true)
         print("로그인 버튼 tap")
+    }
+    
+    
+    
+    @objc func SignUpButtontap() {
+        self.navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
     
     override func viewDidLoad() {
