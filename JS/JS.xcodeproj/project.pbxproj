@@ -11,6 +11,8 @@
 		6F1221ED2C886BF300F84DCA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221EC2C886BF300F84DCA /* LoginViewModel.swift */; };
 		6F1221EF2C8876B200F84DCA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221EE2C8876B200F84DCA /* SignUpViewController.swift */; };
 		6F1221F12C8876BC00F84DCA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221F02C8876BC00F84DCA /* SignUpViewModel.swift */; };
+		6F1527F62C8AF0AE00F76990 /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1527F52C8AF0AE00F76990 /* PersonInfoViewController.swift */; };
+		6F1527F82C8AF33F00F76990 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */; };
 		6F61D2012C89B70F005C2265 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */; };
 		6F61D2042C89BB11005C2265 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 6F61D2032C89BB11005C2265 /* FSCalendar */; };
 		6F6272232C8A18560060979A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6272222C8A18560060979A /* RxCocoa */; };
@@ -32,6 +34,8 @@
 		6F1221EC2C886BF300F84DCA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6F1221EE2C8876B200F84DCA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6F1221F02C8876BC00F84DCA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		6F1527F52C8AF0AE00F76990 /* PersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
+		6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		6F7EE2402C8AE14D00B5B04A /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		6FF66F212C88318400B79C59 /* JS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				6FF66F3F2C8848DD00B79C59 /* MyPageViewController.swift */,
+				6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */,
+				6F1527F52C8AF0AE00F76990 /* PersonInfoViewController.swift */,
 				6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */,
 			);
 			path = MyPage;
@@ -245,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F1527F82C8AF33F00F76990 /* InfoViewModel.swift in Sources */,
 				6F1221EB2C88634F00F84DCA /* LoginViewController.swift in Sources */,
 				6F7EE2412C8AE14D00B5B04A /* TodoListViewController.swift in Sources */,
 				6FF66F402C8848DD00B79C59 /* MyPageViewController.swift in Sources */,
@@ -252,6 +259,7 @@
 				6F1221F12C8876BC00F84DCA /* SignUpViewModel.swift in Sources */,
 				6FF66F292C88318400B79C59 /* MainTabVarViewController.swift in Sources */,
 				6FF66F252C88318400B79C59 /* AppDelegate.swift in Sources */,
+				6F1527F62C8AF0AE00F76990 /* PersonInfoViewController.swift in Sources */,
 				6FF66F272C88318400B79C59 /* SceneDelegate.swift in Sources */,
 				6FF66F432C88495300B79C59 /* HomeViewController.swift in Sources */,
 				6F1221ED2C886BF300F84DCA /* LoginViewModel.swift in Sources */,

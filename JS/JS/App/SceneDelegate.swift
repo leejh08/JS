@@ -28,6 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let loginViewController = LoginViewController()
         let navigationController = UINavigationController(rootViewController: loginViewController)
+        
+        
             
             window?.rootViewController = navigationController
         
