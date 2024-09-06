@@ -18,6 +18,7 @@
 		6F6272232C8A18560060979A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6272222C8A18560060979A /* RxCocoa */; };
 		6F6272252C8A18560060979A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6272242C8A18560060979A /* RxSwift */; };
 		6F7EE2412C8AE14D00B5B04A /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE2402C8AE14D00B5B04A /* TodoListViewController.swift */; };
+		6F86DFB52C8B2C0400BBBAC4 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F86DFB42C8B2C0400BBBAC4 /* ToDoTableViewCell.swift */; };
 		6FF66F252C88318400B79C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF66F242C88318400B79C59 /* AppDelegate.swift */; };
 		6FF66F272C88318400B79C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF66F262C88318400B79C59 /* SceneDelegate.swift */; };
 		6FF66F292C88318400B79C59 /* MainTabVarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF66F282C88318400B79C59 /* MainTabVarViewController.swift */; };
@@ -38,6 +39,7 @@
 		6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		6F7EE2402C8AE14D00B5B04A /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		6F86DFB42C8B2C0400BBBAC4 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		6FF66F212C88318400B79C59 /* JS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF66F242C88318400B79C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FF66F262C88318400B79C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				6F7EE2402C8AE14D00B5B04A /* TodoListViewController.swift */,
+				6F86DFB42C8B2C0400BBBAC4 /* ToDoTableViewCell.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			children = (
 				6FF66F282C88318400B79C59 /* MainTabVarViewController.swift */,
 				6FF66F422C88495300B79C59 /* HomeViewController.swift */,
+				6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -163,7 +167,6 @@
 				6FF66F3F2C8848DD00B79C59 /* MyPageViewController.swift */,
 				6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */,
 				6F1527F52C8AF0AE00F76990 /* PersonInfoViewController.swift */,
-				6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				6F1221EF2C8876B200F84DCA /* SignUpViewController.swift in Sources */,
 				6F1221F12C8876BC00F84DCA /* SignUpViewModel.swift in Sources */,
 				6FF66F292C88318400B79C59 /* MainTabVarViewController.swift in Sources */,
+				6F86DFB52C8B2C0400BBBAC4 /* ToDoTableViewCell.swift in Sources */,
 				6FF66F252C88318400B79C59 /* AppDelegate.swift in Sources */,
 				6F1527F62C8AF0AE00F76990 /* PersonInfoViewController.swift in Sources */,
 				6FF66F272C88318400B79C59 /* SceneDelegate.swift in Sources */,
