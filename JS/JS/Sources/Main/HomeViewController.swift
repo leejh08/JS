@@ -9,11 +9,22 @@ import FSCalendar
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    private let jsLabel = UILabel().then {
+        $0.font = .boldSystemFont(ofSize: 45)
+        $0.textAlignment = .center
+        $0.text = "JS"
+        $0.textColor = .darkGray
+    }
+    
+    
+    
     private let calendar: FSCalendar = {
         let calendar = FSCalendar(frame: .zero)
         calendar.headerHeight = 44
         return calendar
     }()
+    
+    
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -110,6 +121,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationItem.hidesBackButton = true
 
         [
+            jsLabel,
             suggestionButton,
             daysLabel,
             rankTableView,
@@ -134,6 +146,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func layout() {
+        
+        
+        jsLabel.snp.makeConstraints {
+            
+            $0.top.equalTo(50)
+            $0.right.equalToSuperview().inset(325)
+        }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
