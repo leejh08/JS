@@ -98,6 +98,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    
+    
     private let rankLabel = UILabel().then {
         $0.text = "⭐️순위⭐️"
         $0.font = .boldSystemFont(ofSize: 20)
@@ -162,7 +164,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         suggestionButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(1)
             $0.width.equalTo(200)
             $0.height.equalTo(50)
         }
