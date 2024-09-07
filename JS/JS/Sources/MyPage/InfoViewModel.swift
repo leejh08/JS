@@ -1,10 +1,10 @@
 import Foundation
 
 class InfoViewModel {
-    var onSignUp: (() -> Void)?
+    var goInfo: (() -> Void)?
     
-    func signUpButtonTap() {
+    func myPageButtonTap() {
         
-        onSignUp?()
+        goInfo?()
     }
 }

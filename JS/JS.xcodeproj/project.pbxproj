@@ -13,6 +13,9 @@
 		6F1221F12C8876BC00F84DCA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1221F02C8876BC00F84DCA /* SignUpViewModel.swift */; };
 		6F1527F62C8AF0AE00F76990 /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1527F52C8AF0AE00F76990 /* PersonInfoViewController.swift */; };
 		6F1527F82C8AF33F00F76990 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */; };
+		6F5187732C8C04DD00B2798A /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5187722C8C04DD00B2798A /* PersonTableViewCell.swift */; };
+		6F5187752C8C07DC00B2798A /* EscapeStudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5187742C8C07DC00B2798A /* EscapeStudyViewController.swift */; };
+		6F5187772C8C10BC00B2798A /* BigJuYeongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5187762C8C10BC00B2798A /* BigJuYeongViewController.swift */; };
 		6F61D2012C89B70F005C2265 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */; };
 		6F61D2042C89BB11005C2265 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 6F61D2032C89BB11005C2265 /* FSCalendar */; };
 		6F6272232C8A18560060979A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6272222C8A18560060979A /* RxCocoa */; };
@@ -37,6 +40,9 @@
 		6F1221F02C8876BC00F84DCA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		6F1527F52C8AF0AE00F76990 /* PersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
 		6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		6F5187722C8C04DD00B2798A /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		6F5187742C8C07DC00B2798A /* EscapeStudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeStudyViewController.swift; sourceTree = "<group>"; };
+		6F5187762C8C10BC00B2798A /* BigJuYeongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigJuYeongViewController.swift; sourceTree = "<group>"; };
 		6F61D2002C89B70F005C2265 /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		6F7EE2402C8AE14D00B5B04A /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		6F86DFB42C8B2C0400BBBAC4 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				6FF66F3F2C8848DD00B79C59 /* MyPageViewController.swift */,
 				6F1527F72C8AF33F00F76990 /* InfoViewModel.swift */,
 				6F1527F52C8AF0AE00F76990 /* PersonInfoViewController.swift */,
+				6F5187742C8C07DC00B2798A /* EscapeStudyViewController.swift */,
+				6F5187722C8C04DD00B2798A /* PersonTableViewCell.swift */,
+				6F5187762C8C10BC00B2798A /* BigJuYeongViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -257,7 +266,10 @@
 				6F1527F82C8AF33F00F76990 /* InfoViewModel.swift in Sources */,
 				6F1221EB2C88634F00F84DCA /* LoginViewController.swift in Sources */,
 				6F7EE2412C8AE14D00B5B04A /* TodoListViewController.swift in Sources */,
+				6F5187752C8C07DC00B2798A /* EscapeStudyViewController.swift in Sources */,
+				6F5187732C8C04DD00B2798A /* PersonTableViewCell.swift in Sources */,
 				6FF66F402C8848DD00B79C59 /* MyPageViewController.swift in Sources */,
+				6F5187772C8C10BC00B2798A /* BigJuYeongViewController.swift in Sources */,
 				6F1221EF2C8876B200F84DCA /* SignUpViewController.swift in Sources */,
 				6F1221F12C8876BC00F84DCA /* SignUpViewModel.swift in Sources */,
 				6FF66F292C88318400B79C59 /* MainTabVarViewController.swift in Sources */,

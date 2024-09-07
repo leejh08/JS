@@ -6,7 +6,6 @@ import FSCalendar
 
 
 
-
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let jsLabel = UILabel().then {
@@ -34,7 +33,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return label
     }()
     
-    private lazy var previousButton: UIButton = {
+    private lazy var beforeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.addTarget(self, action: #selector(prevCurrentPage), for: .touchUpInside)
@@ -129,7 +128,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             rankTableView,
             calendar,
             titleLabel,
-            previousButton,
+            beforeButton,
             nextButton,
             rankLabel
             
@@ -186,11 +185,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         rankTableView.snp.makeConstraints {
             $0.top.equalTo(calendar.snp.bottom).offset(20)
             $0.left.right.equalToSuperview()
-            $0.bottom.equalTo(previousButton.snp.top).offset(-20)
+            $0.bottom.equalTo(beforeButton.snp.top).offset(-20)
         }
         
         
-        previousButton.snp.makeConstraints {
+        beforeButton.snp.makeConstraints {
             $0.left.equalToSuperview().offset(20)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
         }

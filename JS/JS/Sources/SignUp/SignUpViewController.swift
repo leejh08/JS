@@ -98,7 +98,7 @@ class SignUpViewController: UIViewController {
         
         
         viewModel.onSignUp = { [weak self] in
-            let homeViewController = HomeViewController()
+            let homeViewController = MainTabVarViewController()
             self?.navigationController?.pushViewController(homeViewController, animated: true)
         }
         
