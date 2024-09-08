@@ -9,13 +9,15 @@ class LoginViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let viewModel = LoginViewModel()
     
-    private let logoImageVIew = UIImageView().then {
-        $0.image = .logo
+    private let logoLabel = UILabel().then {
+        $0.text = "JS"
+        $0.textColor = .white
+        $0.font = .italicSystemFont(ofSize: 48)
     }
     
     private let welcomeLabel = UILabel().then {
         $0.text = "어서와 자습은 오랜만이지?"
-        $0.textColor = .lightGray
+        $0.textColor = .white
         $0.font = .boldSystemFont(ofSize: 35)
     }
     
@@ -23,7 +25,7 @@ class LoginViewController: UIViewController {
         $0.attributedPlaceholder = NSAttributedString(string: "아이디를 입력하세요", attributes: [.foregroundColor: UIColor.black])
         $0.keyboardType = .emailAddress
         $0.font = .systemFont(ofSize: 20)
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
         $0.font = .italicSystemFont(ofSize: 15)
         $0.layer.cornerRadius = 15
         
@@ -36,7 +38,7 @@ class LoginViewController: UIViewController {
         $0.attributedPlaceholder = NSAttributedString(string: "비밀번호를 입력하세요", attributes: [.foregroundColor: UIColor.black])
         $0.keyboardType = .emailAddress
         $0.font = .systemFont(ofSize: 20)
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
         $0.font = .italicSystemFont(ofSize: 15)
         $0.layer.cornerRadius = 15
         
@@ -47,12 +49,12 @@ class LoginViewController: UIViewController {
     
     private let goSignUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
-        $0.setTitleColor(.lightGray, for: .normal)
+        $0.setTitleColor(.white, for: .normal)
     }
     
     private let loginButton = UIButton().then {
         $0.setTitle("로그인", for: .normal)
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
         $0.setTitleColor(.black, for: .normal)
         $0.layer.cornerRadius = 10
     }
@@ -95,7 +97,7 @@ class LoginViewController: UIViewController {
     
     func addView() {
         [
-            logoImageVIew,
+            logoLabel,
             welcomeLabel,
             loginTextField,
             passWordTextField,
@@ -105,11 +107,9 @@ class LoginViewController: UIViewController {
     }
     
     func layout() {
-        logoImageVIew.snp.makeConstraints {
+            logoLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(100)
-            $0.width.equalTo(100)
-            $0.height.equalTo(100)
+                $0.top.equalTo(250)
         }
         
         welcomeLabel.snp.makeConstraints {
@@ -119,7 +119,7 @@ class LoginViewController: UIViewController {
         
         loginTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(logoImageVIew.snp.bottom).offset(60)
+            $0.top.equalTo(logoLabel.snp.bottom).offset(60)
             $0.width.equalToSuperview().inset(25)
             $0.height.equalTo(56)
         }

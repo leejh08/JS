@@ -4,8 +4,6 @@ import SnapKit
 import Then
 import FSCalendar
 
-
-
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let jsLabel = UILabel().then {
@@ -15,15 +13,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         $0.textColor = .darkGray
     }
     
-    
-    
     private let calendar: FSCalendar = {
         let calendar = FSCalendar(frame: .zero)
         calendar.headerHeight = 44
         return calendar
     }()
-    
-    
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -77,7 +71,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         $0.tintColor = .white
         $0.backgroundColor = .blue
         $0.layer.cornerRadius = 10
-        
     }
     
     private let daysLabel = UILabel().then {
@@ -96,9 +89,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         $0.register(RankTableViewCell.self, forCellReuseIdentifier: RankTableViewCell.identifier)
     }
     
-    
-    
-    
     private let rankLabel = UILabel().then {
         $0.text = "⭐️순위⭐️"
         $0.font = .boldSystemFont(ofSize: 20)
@@ -108,17 +98,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private var selectedDate: Date?
     private var daysPassed: Int = 0
+    private var hoursPassed: Int = 0 // 시간 계산을 위한 변수 추가
     let names = ["김주영", "김주영", "김주영", "김주영", "김주영"]
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "공부 좀 해라"
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
         navigationItem.hidesBackButton = true
 
         [
@@ -131,8 +118,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             beforeButton,
             nextButton,
             rankLabel
-            
-            ].forEach { view.addSubview($0) }
+        ].forEach { view.addSubview($0) }
         
         layout()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -147,10 +133,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func layout() {
-        
-        
         jsLabel.snp.makeConstraints {
-            
             $0.top.equalTo(50)
             $0.right.equalToSuperview().inset(325)
         }
@@ -160,7 +143,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             $0.centerX.equalToSuperview()
         }
         
-        
         suggestionButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(titleLabel.snp.bottom).offset(1)
@@ -168,12 +150,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             $0.height.equalTo(50)
         }
         
-        
         daysLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(suggestionButton.snp.bottom).offset(20)
         }
-        
         
         calendar.snp.makeConstraints {
             $0.left.right.equalToSuperview()
@@ -181,33 +161,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             $0.height.equalTo(300)
         }
         
-        
         rankTableView.snp.makeConstraints {
             $0.top.equalTo(calendar.snp.bottom).offset(20)
             $0.left.right.equalToSuperview()
             $0.bottom.equalTo(beforeButton.snp.top).offset(-20)
         }
         
-        
         beforeButton.snp.makeConstraints {
             $0.left.equalToSuperview().offset(20)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
         }
-        
         
         nextButton.snp.makeConstraints {
             $0.right.equalToSuperview().offset(-20)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
         }
         
-        
         rankLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(600)
         }
     }
-    
-    
     
     @objc func showDatePicker() {
         let alert = UIAlertController(title: "날짜 선택", message: nil, preferredStyle: .actionSheet)
@@ -233,18 +207,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func updateDaysLabel() {
-        guard let referenceDate = selectedDate else {
+        guard let selectDate = selectedDate else {
             daysLabel.text = "날짜를 선택하세요"
             return
         }
         
         let currentDate = Date()
-        let diffComponents = Calendar.current.dateComponents([.day], from: referenceDate, to: currentDate)
-        daysPassed = diffComponents.day ?? 0
+        let dateComponents = Calendar.current.dateComponents([.day], from: selectDate, to: currentDate)
+        daysPassed = dateComponents.day ?? 0
+        hoursPassed = daysPassed * 24
         
         daysLabel.text = "\(daysPassed)일 동안 자습에서 썩음"
         
         rankTableView.reloadData()
+        
+        
+        let detailVC = TimeViewController()
+        detailVC.hoursPassed = hoursPassed
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -268,7 +248,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
 
 extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {

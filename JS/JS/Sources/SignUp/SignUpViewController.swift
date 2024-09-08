@@ -13,15 +13,22 @@ class SignUpViewController: UIViewController {
     
     private let welcomeLabel = UILabel().then {
         $0.text = "어서와 자습은 처음이지?"
-        $0.textColor = .lightGray
+        $0.textColor = .white
         $0.font = .boldSystemFont(ofSize: 35)
+    }
+    
+    
+    private let logoLabel = UILabel().then {
+        $0.text = "JS"
+        $0.textColor = .white
+        $0.font = .italicSystemFont(ofSize: 48)
     }
     
     private let emailTextField = UITextField().then {
         $0.attributedPlaceholder = NSAttributedString(string: "이메일을 입력하세요", attributes: [.foregroundColor: UIColor.black])
         $0.keyboardType = .emailAddress
         $0.font = .systemFont(ofSize: 20)
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
         $0.font = .italicSystemFont(ofSize: 15)
         $0.layer.cornerRadius = 15
         
@@ -34,7 +41,7 @@ class SignUpViewController: UIViewController {
         $0.attributedPlaceholder = NSAttributedString(string: "비밀번호를 입력하세요", attributes: [.foregroundColor: UIColor.black])
         $0.keyboardType = .emailAddress
         $0.font = .systemFont(ofSize: 20)
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
         $0.font = .italicSystemFont(ofSize: 15)
         $0.layer.cornerRadius = 15
         
@@ -47,7 +54,7 @@ class SignUpViewController: UIViewController {
         $0.attributedPlaceholder = NSAttributedString(string: "전화번호를 입력하세요", attributes: [.foregroundColor: UIColor.black])
         $0.keyboardType = .emailAddress
         $0.font = .systemFont(ofSize: 20)
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
         $0.font = .italicSystemFont(ofSize: 15)
         $0.layer.cornerRadius = 15
         
@@ -58,12 +65,12 @@ class SignUpViewController: UIViewController {
     
     private let alreadySignUp = UIButton().then {
         $0.setTitle("로그인", for: .normal)
-        $0.setTitleColor(.lightGray, for: .normal)
+        $0.setTitleColor(.white, for: .normal)
     }
     
     private let SignUpButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
         $0.setTitleColor(.black, for: .normal)
         $0.layer.cornerRadius = 10
     }
@@ -112,6 +119,7 @@ class SignUpViewController: UIViewController {
     func addview() {
         [
             welcomeLabel,
+            logoLabel,
             emailTextField,
             passWordTextField,
             PhoneTextField,
@@ -125,6 +133,11 @@ class SignUpViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(125)
         }
+        
+        logoLabel.snp.makeConstraints {
+        $0.centerX.equalToSuperview()
+            $0.top.equalTo(250)
+    }
         
         emailTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()

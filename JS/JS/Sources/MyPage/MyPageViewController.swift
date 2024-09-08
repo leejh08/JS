@@ -28,7 +28,6 @@ class MyPageViewController: UIViewController {
     }
     
     
-   
     
     private let todayLabel = UILabel().then {
         $0.text = "오늘의 명언🔥"
@@ -65,18 +64,18 @@ class MyPageViewController: UIViewController {
         $0.setImage(image, for: .normal)
         $0.tintColor = .black
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
         view.backgroundColor = .systemBackground
         
         
         
         let personBarButtonItem = UIBarButtonItem(customView: personButton)
-            navigationItem.rightBarButtonItem = personBarButtonItem
+        navigationItem.rightBarButtonItem = personBarButtonItem
         title = "마이페이지"
         
         addView()
@@ -87,7 +86,7 @@ class MyPageViewController: UIViewController {
     private func setupBindings() {
         personButton.addTarget(self, action: #selector(handlePersonButtonTap), for: .touchUpInside)
         
-    
+        
         
         
         randomButton.rx.tap
@@ -125,25 +124,25 @@ class MyPageViewController: UIViewController {
             $0.width.equalTo(250)
             $0.height.equalTo(50)
         }
-
+        
         jsLabel.snp.makeConstraints {
             $0.top.equalTo(50)
             $0.right.equalToSuperview().inset(325)
         }
-
-      
+        
+        
         
         wiseSayingLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(todayLabel.snp.bottom).offset(50)
         }
-
+        
         
         randomButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(wiseSayingLabel.snp.bottom).offset(30)
         }
     }
-
-    }
+    
+}
 
