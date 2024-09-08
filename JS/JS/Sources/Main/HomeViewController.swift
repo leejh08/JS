@@ -4,6 +4,8 @@ import SnapKit
 import Then
 import FSCalendar
 
+
+
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let jsLabel = UILabel().then {
@@ -13,33 +15,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         $0.textColor = .darkGray
     }
     
-    private let calendar: FSCalendar = {
-        let calendar = FSCalendar(frame: .zero)
-        calendar.headerHeight = 44
-        return calendar
-    }()
+    private let calendar: FSCalendar = FSCalendar(frame: .zero).then {
+        $0.headerHeight = 44
+    }
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18)
-        return label
-    }()
+    private let yearLabel = UILabel().then {
+        $0.text = ""
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: .zero)
+    }
     
-    private lazy var beforeButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.addTarget(self, action: #selector(prevCurrentPage), for: .touchUpInside)
-        return button
-    }()
+    private lazy var beforeButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        $0.addTarget(self, action: #selector(prevCurrentPage), for: .touchUpInside)
+    }
     
-    private lazy var nextButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.addTarget(self, action: #selector(nextCurrentPage), for: .touchUpInside)
-        return button
-    }()
+    private lazy var nextButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        $0.addTarget(self, action: #selector(nextCurrentPage), for: .touchUpInside)
+    }
     
     private var currentPage: Date?
     private let today: Date = Date()
@@ -90,7 +84,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private let rankLabel = UILabel().then {
-        $0.text = "⭐️순위⭐️"
+        $0.text = ""
         $0.font = .boldSystemFont(ofSize: 20)
         $0.textAlignment = .center
         $0.textColor = .black
@@ -98,7 +92,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private var selectedDate: Date?
     private var daysPassed: Int = 0
-    private var hoursPassed: Int = 0 // 시간 계산을 위한 변수 추가
+    private var hoursPassed: Int = 0
     let names = ["김주영", "김주영", "김주영", "김주영", "김주영"]
     
     override func viewDidLoad() {
@@ -114,13 +108,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             daysLabel,
             rankTableView,
             calendar,
-            titleLabel,
+            yearLabel,
             beforeButton,
             nextButton,
             rankLabel
         ].forEach { view.addSubview($0) }
         
-        layout()
+        setupConstraints()
         navigationController?.navigationBar.prefersLargeTitles = true
         
         suggestionButton.addTarget(self, action: #selector(showDatePicker), for: .touchUpInside)
@@ -132,20 +126,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         calendar.dataSource = self
     }
     
-    func layout() {
+    private func setupConstraints() {
         jsLabel.snp.makeConstraints {
-            $0.top.equalTo(50)
-            $0.right.equalToSuperview().inset(325)
+            $0.top.equalTo(80)
+            $0.left.equalToSuperview().inset(20)
         }
         
-        titleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+        yearLabel.snp.makeConstraints {
+            $0.top.equalTo(jsLabel.snp.bottom).offset(50)
             $0.centerX.equalToSuperview()
         }
         
         suggestionButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom).offset(1)
+            $0.top.equalTo(yearLabel.snp.bottom).offset(10)
             $0.width.equalTo(200)
             $0.height.equalTo(50)
         }
@@ -157,7 +151,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         calendar.snp.makeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.equalTo(daysLabel.snp.bottom).offset(1)
+            $0.top.equalTo(daysLabel.snp.bottom).offset(10)
             $0.height.equalTo(300)
         }
         
@@ -179,11 +173,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         rankLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(600)
+            $0.top.equalTo(rankTableView.snp.bottom).offset(20)
         }
     }
     
-    @objc func showDatePicker() {
+    @objc private func showDatePicker() {
         let alert = UIAlertController(title: "날짜 선택", message: nil, preferredStyle: .actionSheet)
         
         let pickerFrame = CGRect(x: 0, y: 50, width: alert.view.frame.width - 20, height: 200)
@@ -206,7 +200,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         present(alert, animated: true, completion: nil)
     }
     
-    func updateDaysLabel() {
+    private func updateDaysLabel() {
         guard let selectDate = selectedDate else {
             daysLabel.text = "날짜를 선택하세요"
             return
@@ -217,10 +211,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         daysPassed = dateComponents.day ?? 0
         hoursPassed = daysPassed * 24
         
-        daysLabel.text = "\(daysPassed)일 동안 자습에서 썩음"
+        daysLabel.text = "\(daysPassed)일 동안 자습함"
         
         rankTableView.reloadData()
-        
         
         let detailVC = TimeViewController()
         detailVC.hoursPassed = hoursPassed
@@ -251,6 +244,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        titleLabel.text = DateFormatter.localizedString(from: calendar.currentPage, dateStyle: .medium, timeStyle: .none)
+        yearLabel.text = DateFormatter.localizedString(from: calendar.currentPage, dateStyle: .medium, timeStyle: .none)
     }
 }

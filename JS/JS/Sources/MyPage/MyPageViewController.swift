@@ -126,7 +126,7 @@ class MyPageViewController: UIViewController {
         }
         
         jsLabel.snp.makeConstraints {
-            $0.top.equalTo(50)
+            $0.top.equalTo(80)
             $0.right.equalToSuperview().inset(325)
         }
         

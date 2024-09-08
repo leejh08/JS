@@ -14,14 +14,14 @@ class TimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "얼마나 낭비했을까?"
+        title = "몇시간을 JS했을까?"
         view.backgroundColor = .white
 
         
         view.addSubview(hoursLabel)
         layout()
         
-        hoursLabel.text = "\(hoursPassed)시간 동안 자습에서 썩음"
+        hoursLabel.text = "\(hoursPassed)시간 동안 JS함"
     }
     
     
