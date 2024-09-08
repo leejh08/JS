@@ -106,6 +106,8 @@ class LoginViewController: UIViewController {
         ].forEach { view.addSubview($0) }
     }
     
+    
+    
     func layout() {
             logoLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
