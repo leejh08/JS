@@ -20,8 +20,8 @@ class ClubTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
-        setupLayout()
+        addView()
+        layout()
     }
     
     required init?(coder: NSCoder) {
@@ -29,13 +29,13 @@ class ClubTableViewCell: UITableViewCell {
     }
     
     
-    private func setupViews() {
+    private func addView() {
         contentView.addSubview(logoImageView)
         contentView.addSubview(descriptionLabel)
     }
     
     
-    private func setupLayout() {
+    private func layout() {
         logoImageView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
