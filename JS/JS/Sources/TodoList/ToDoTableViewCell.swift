@@ -11,7 +11,7 @@ class TodoTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupLayout()
+        layout()
     }
 
     required init?(coder: NSCoder) {
@@ -19,7 +19,7 @@ class TodoTableViewCell: UITableViewCell {
     }
 
     
-    func setupLayout() {
+    func layout() {
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()

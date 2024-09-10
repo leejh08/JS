@@ -81,6 +81,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F2C57572C9036450004C0F4 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		6F7EE23F2C8AE13700B5B04A /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +134,7 @@
 		6FF66F232C88318400B79C59 /* JS */ = {
 			isa = PBXGroup;
 			children = (
+				6F2C57572C9036450004C0F4 /* Auth */,
 				6FF66F3B2C8847C200B79C59 /* Sources */,
 				6FF66F3A2C8847A200B79C59 /* Resources */,
 				6FF66F382C88458200B79C59 /* App */,

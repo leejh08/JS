@@ -42,8 +42,8 @@ class ClubViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func layOut() {
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
     
