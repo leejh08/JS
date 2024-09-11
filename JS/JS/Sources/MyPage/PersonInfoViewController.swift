@@ -52,13 +52,13 @@ extension PersonInfoViewController: UITableViewDelegate, UITableViewDataSource {
             
             switch selectedcell {
             case "로그아웃":
-                let loginViewController = LoginViewController()
-                self.tabBarController?.tabBar.isHidden = true
-                self.navigationController?.pushViewController(loginViewController, animated: true)
+                let loginViewController = UINavigationController(rootViewController:  LoginViewController())
+                loginViewController.modalPresentationStyle = .fullScreen
+                self.present(loginViewController, animated: true)
             case "회원탈퇴":
-                let signUpViewController = SignUpViewController()
-                self.tabBarController?.tabBar.isHidden = true
-                self.navigationController?.pushViewController(signUpViewController, animated: true)
+                let loginViewController = UINavigationController(rootViewController:  LoginViewController())
+                loginViewController.modalPresentationStyle = .fullScreen
+                self.present(loginViewController, animated: true)
             case "자습 탈출":
                 let escapeStudyViewController = EscapeStudyViewController()
                 self.tabBarController?.tabBar.isHidden = true

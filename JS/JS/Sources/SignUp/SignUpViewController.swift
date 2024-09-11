@@ -111,8 +111,7 @@ class SignUpViewController: UIViewController {
         
         
         viewModel.onLogin = { [weak self] in
-            let loginViewController = LoginViewController()
-            self?.navigationController?.pushViewController(loginViewController, animated: true)
+            self?.navigationController?.popViewController(animated: true)
         }
     }
     

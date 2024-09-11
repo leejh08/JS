@@ -85,8 +85,7 @@ class LoginViewController: UIViewController {
         
         
         viewModel.onLogin = { [weak self] in
-            let homeViewController = MainTabVarViewController()
-            self?.navigationController?.pushViewController(homeViewController, animated: true)
+            self?.dismiss(animated: true)
         }
         
         viewModel.onSignUp = { [weak self] in

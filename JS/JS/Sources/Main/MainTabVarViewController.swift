@@ -4,6 +4,7 @@ import SnapKit
 import Then
 
 class MainTabVarViewController: UITabBarController {
+    private var isFristLogin: Bool = false
     
     
     
@@ -30,6 +31,18 @@ class MainTabVarViewController: UITabBarController {
         vc4.tabBarItem.image = UIImage(systemName: "figure.wave")
         vc5.tabBarItem.image = UIImage(systemName: "person")
 
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.selectedIndex = 0
+        
+        if !isFristLogin {
+            let vc = UINavigationController(rootViewController: LoginViewController())
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
+        isFristLogin = true
         
     }
 
